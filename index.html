@@ -738,7 +738,7 @@
         }
         
         .pricing-header {
-            background: var(--gradient-green);
+            background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
             padding: 2rem;
             text-align: center;
             color: var(--white);
@@ -1194,8 +1194,19 @@
             }
             
             .hero-trust-badges {
-                flex-direction: column;
+                flex-direction: row;
+                flex-wrap: wrap;
                 align-items: center;
+                gap: 0.75rem;
+            }
+            
+            .trust-badge {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+            
+            .trust-badge i {
+                font-size: 1.2rem;
             }
             
             .stats-section {
@@ -1203,8 +1214,42 @@
             }
             
             .stats-wrapper {
-                grid-template-columns: 1fr;
-                padding: 1.5rem;
+                grid-template-columns: repeat(2, 1fr);
+                padding: 1rem;
+                gap: 1rem;
+            }
+            
+            .stat-item {
+                padding: 0.75rem 0.5rem;
+            }
+            
+            .stat-icon {
+                width: 45px;
+                height: 45px;
+                margin-bottom: 0.5rem;
+            }
+            
+            .stat-icon i {
+                font-size: 1.2rem;
+            }
+            
+            .stat-number {
+                font-size: 1.75rem;
+            }
+            
+            .stat-label {
+                font-size: 0.8rem;
+            }
+            
+            .clients-image {
+                max-width: 100%;
+                transform: scale(1.2);
+                margin: 1rem 0;
+            }
+            
+            .clients-wrapper {
+                padding: 1rem;
+                overflow: hidden;
             }
             
             .section-title::after {
@@ -1341,13 +1386,9 @@
                     </a>
                 </div>
                 <div class="hero-trust-badges">
-                    <div class="trust-badge">
+                    <div class="trust-badge trust-badge-license">
                         <i class="bi bi-shield-check"></i>
-                        <span>PPIU 617</span>
-                    </div>
-                    <div class="trust-badge">
-                        <i class="bi bi-shield-check"></i>
-                        <span>PIHK 584</span>
+                        <span>PPIU 617 & PIHK 584</span>
                     </div>
                     <div class="trust-badge">
                         <i class="bi bi-award"></i>
