@@ -233,6 +233,11 @@
             box-shadow: none;
         }
         
+        .navbar-toggler-icon-custom {
+            color: var(--text-dark);
+            transition: var(--transition-smooth);
+        }
+        
         /* ========== Hero Section ========== */
         .hero-section {
             position: relative;
@@ -1329,7 +1334,7 @@
                 <img src="assets/images/logo-thu.png" alt="Travel Haji Umroh" class="img-fluid">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+                <i class="bi bi-list navbar-toggler-icon-custom" style="font-size: 1.5rem;"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
@@ -2091,6 +2096,40 @@
                 (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j')) ||
                 (e.ctrlKey && (e.key === 'U' || e.key === 'u'))) {
                 e.preventDefault();
+            }
+        });
+
+        // ========== Navbar Toggler Icon Change ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const toggleIcon = document.querySelector('.navbar-toggler-icon-custom');
+            const navbarCollapse = document.querySelector('#navbarNav');
+            
+            if (navbarToggler && toggleIcon) {
+                navbarToggler.addEventListener('click', function() {
+                    // Toggle between list and x icon
+                    if (toggleIcon.classList.contains('bi-list')) {
+                        toggleIcon.classList.remove('bi-list');
+                        toggleIcon.classList.add('bi-x');
+                    } else {
+                        toggleIcon.classList.remove('bi-x');
+                        toggleIcon.classList.add('bi-list');
+                    }
+                });
+                
+                // Change icon back to list when menu closes (clicking on a link)
+                const navLinks = document.querySelectorAll('.navbar-collapse .nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        // Check if menu is collapsing
+                        setTimeout(() => {
+                            if (!navbarCollapse.classList.contains('show')) {
+                                toggleIcon.classList.remove('bi-x');
+                                toggleIcon.classList.add('bi-list');
+                            }
+                        }, 50);
+                    });
+                });
             }
         });
 
