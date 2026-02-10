@@ -1363,6 +1363,95 @@
             font-size: 1rem;
         }
 
+        /* Requirements Section Styles */
+        .requirements-section {
+            margin: 1.25rem 0;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, rgba(27, 94, 32, 0.08) 0%, rgba(255, 193, 7, 0.08) 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(27, 94, 32, 0.15);
+        }
+
+        .requirements-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark-navy);
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .requirements-title i {
+            color: var(--secondary-green);
+            font-size: 1.2rem;
+        }
+
+        .requirements-intro {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.85rem;
+        }
+
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem 0;
+        }
+
+        .requirement-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .requirement-item:last-child {
+            border-bottom: none;
+        }
+
+        .requirement-item.highlight {
+            background: rgba(255, 193, 7, 0.1);
+            margin: 0.25rem -0.5rem;
+            padding: 0.6rem 0.5rem;
+            border-radius: 8px;
+            border-bottom: none;
+        }
+
+        .requirement-number {
+            width: 28px;
+            height: 28px;
+            background: var(--secondary-green);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .requirement-item.highlight .requirement-number {
+            background: var(--primary-gold);
+            color: var(--text-dark);
+        }
+
+        .requirement-text {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+        }
+
+        .requirement-text strong {
+            color: var(--secondary-green);
+            font-weight: 700;
+        }
+
+        .requirements-cta {
+            margin-top: 0.75rem;
+        }
+
         /* Desktop layout adjustments for 30/70 split */
         @media (min-width: 992px) {
             .calculator-section .row {
@@ -1450,6 +1539,33 @@
             }
 
             .tagline-sub {
+                font-size: 0.8rem;
+            }
+
+            .requirements-section {
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+
+            .requirements-title {
+                font-size: 0.9rem;
+            }
+
+            .requirements-intro {
+                font-size: 0.8rem;
+            }
+
+            .requirement-item {
+                padding: 0.4rem 0;
+            }
+
+            .requirement-number {
+                width: 26px;
+                height: 26px;
+                font-size: 0.75rem;
+            }
+
+            .requirement-text {
                 font-size: 0.8rem;
             }
 
@@ -2133,7 +2249,7 @@
             </div>
             <div class="row g-4">
                 <!-- Umroh -->
-                <div class="col-12 col-sm-6 col-lg-3 fade-in">
+                <div class="col-12 col-sm-6 col-lg-4 fade-in">
                     <div class="product-card">
                         <div class="product-icon">
                             <i class="bi bi-moon-stars"></i>
@@ -2152,28 +2268,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- Haji Furoda -->
-                <div class="col-12 col-sm-6 col-lg-3 fade-in">
-                    <div class="product-card">
-                        <div class="product-icon" style="background: var(--gradient-gold);">
-                            <i class="bi bi-globe-central-south-asia" style="color: var(--text-dark);"></i>
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-title">Haji Furoda</h3>
-                            <p class="product-desc">Haji tanpa antri! Daftar langsung berangkat tanpa masa tunggu bertahun-tahun.</p>
-                            <ul class="product-features">
-                                <li><i class="bi bi-check-circle-fill"></i> Tanpa Antri Kuota</li>
-                                <li><i class="bi bi-check-circle-fill"></i> VIP & Ekonomis</li>
-                                <li><i class="bi bi-check-circle-fill"></i> Free Tour Thaif & Al Ula</li>
-                            </ul>
-                            <a href="https://wa.me/6282142355006?text=Halo%2C%20saya%20ingin%20info%20paket%20HAJI%20FURODA" class="btn btn-whatsapp w-100" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppClick('product_furoda')">
-                                <i class="bi bi-whatsapp"></i> Info Paket
-                            </a>
-                        </div>
-                    </div>
-                </div>
                 <!-- Haji+ Kemenag -->
-                <div class="col-12 col-sm-6 col-lg-3 fade-in">
+                <div class="col-12 col-sm-6 col-lg-4 fade-in">
                     <div class="product-card">
                         <div class="product-icon">
                             <i class="bi bi-building-check"></i>
@@ -2193,7 +2289,7 @@
                     </div>
                 </div>
                 <!-- E-Tajiro -->
-                <div class="col-12 col-sm-6 col-lg-3 fade-in">
+                <div class="col-12 col-sm-6 col-lg-4 fade-in">
                     <div class="product-card">
                         <div class="product-icon">
                             <i class="bi bi-wallet2"></i>
@@ -2376,7 +2472,7 @@
                             <div class="tutorial-step">
                                 <div class="step-number">1</div>
                                 <div class="step-content">
-                                    <p>Menyiapkan Data Diri KTP/KK</p>
+                                    <p>Memilih Tanggal Keberangkatan/Request jika belum bisa menentukan</p>
                                 </div>
                             </div>
 
@@ -2384,7 +2480,7 @@
                             <div class="tutorial-step">
                                 <div class="step-number">2</div>
                                 <div class="step-content">
-                                    <p>Membayar Setoran Awal min. <strong>Rp 100.000</strong> & Administrasi Pendaftaran <strong>Rp 10.000</strong></p>
+                                    <p>Mendapat <strong>ID Member</strong> & no. Rek. Virtual Account di Aplikasi Tajiro</p>
                                 </div>
                             </div>
 
@@ -2392,7 +2488,7 @@
                             <div class="tutorial-step">
                                 <div class="step-number">3</div>
                                 <div class="step-content">
-                                    <p>Memilih Tanggal Keberangkatan/Request jika belum bisa menentukan</p>
+                                    <p>Tabungan hanya dipergunakan untuk keperluan Haji & Umroh bersama <strong>PT. Travel Haji Umroh</strong></p>
                                 </div>
                             </div>
 
@@ -2400,23 +2496,46 @@
                             <div class="tutorial-step">
                                 <div class="step-number">4</div>
                                 <div class="step-content">
-                                    <p>Mendapat <strong>ID Member</strong> & no. Rek. Virtual Account di Aplikasi Tajiro</p>
-                                </div>
-                            </div>
-
-                            <!-- Step 5 -->
-                            <div class="tutorial-step">
-                                <div class="step-number">5</div>
-                                <div class="step-content">
-                                    <p>Tabungan hanya dipergunakan untuk keperluan Haji & Umroh bersama <strong>PT. Travel Haji Umroh</strong></p>
-                                </div>
-                            </div>
-
-                            <!-- Step 6 -->
-                            <div class="tutorial-step">
-                                <div class="step-number">6</div>
-                                <div class="step-content">
                                     <p>Tabungan bisa dialihkan ke <strong>Ahli Waris</strong> apabila Calon Jamaah berhalangan</p>
+                                </div>
+                            </div>
+
+                            <!-- Persyaratan Pendaftaran -->
+                            <div class="requirements-section">
+                                <h4 class="requirements-title">
+                                    <i class="bi bi-file-earmark-check"></i> Persyaratan Pendaftaran
+                                </h4>
+                                <p class="requirements-intro">Mengirim kirim foto/scan data:</p>
+                                <ul class="requirements-list">
+                                    <li class="requirement-item">
+                                        <div class="requirement-number">1</div>
+                                        <div class="requirement-text">KTP</div>
+                                    </li>
+                                    <li class="requirement-item">
+                                        <div class="requirement-number">2</div>
+                                        <div class="requirement-text">KK (Kartu Keluarga)</div>
+                                    </li>
+                                    <li class="requirement-item">
+                                        <div class="requirement-number">3</div>
+                                        <div class="requirement-text">Surat Nikah / Akta Lahir</div>
+                                    </li>
+                                    <li class="requirement-item">
+                                        <div class="requirement-number">4</div>
+                                        <div class="requirement-text">Surat Keterangan Sehat dari Dokter</div>
+                                    </li>
+                                    <li class="requirement-item">
+                                        <div class="requirement-number">5</div>
+                                        <div class="requirement-text">Foto Wajah 80% Background Putih</div>
+                                    </li>
+                                    <li class="requirement-item highlight">
+                                        <div class="requirement-number">6</div>
+                                        <div class="requirement-text">Bayar Biaya Admin <strong>Rp 1.500.000</strong></div>
+                                    </li>
+                                </ul>
+                                <div class="requirements-cta">
+                                    <a href="https://wa.me/6282142355006?text=Halo%2C%20saya%20ingin%20daftar%20program%20TAJIRO.%20Bisa%20dibantu%20untuk%20pendaftarannya%3F" class="btn btn-whatsapp w-100" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppClick('tajiro_requirements')">
+                                        <i class="bi bi-whatsapp"></i> Daftar Sekarang
+                                    </a>
                                 </div>
                             </div>
 
@@ -2598,7 +2717,7 @@
                 </p>
             </div>
             <div class="row g-4">
-                <div class="col-12 col-md-6 col-lg-3 fade-in">
+                <div class="col-12 col-md-6 col-lg-4 fade-in">
                     <div class="testimonial-card">
                         <p class="testimonial-text">
                             "Alhamdulillah.. akhirnya bisa memberangkatkan Umroh keluarga Gassol.. Gass POOLL.. pelayanan TOP ibadah jadi nyaman"
@@ -2621,7 +2740,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 fade-in">
+                <div class="col-12 col-md-6 col-lg-4 fade-in">
                     <div class="testimonial-card">
                         <p class="testimonial-text">
                             "Bahagia sekali tentunya, pelayanan & fasilitasnya MasyaAllah mantap.. jangan lupa buat temen2 yg hendak Umroh, kami rekomendasikan"
@@ -2644,7 +2763,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 fade-in">
+                <div class="col-12 col-md-6 col-lg-4 fade-in">
                     <div class="testimonial-card">
                         <p class="testimonial-text">
                             "Pelayanan & Fasilitas Terbaik cuma ada disini... full bahagia.. apalagi pulang umroh lgsg mampir Ketan Duren ala Nana.. Mantep"
@@ -2667,7 +2786,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 fade-in">
+                <div class="col-12 col-md-6 col-lg-4 fade-in">
                     <div class="testimonial-card">
                         <p class="testimonial-text">
                             "Terimakasih...sukses selalu, dengan pelayanan yg baik dan bahagia.. semakin jaya"
