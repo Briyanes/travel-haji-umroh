@@ -2011,6 +2011,29 @@
                 left: 0;
                 right: 0;
                 z-index: 1000;
+                max-height: calc(100vh - 80px);
+                overflow-y: auto;
+                scrollbar-width: thin;
+                scrollbar-color: var(--primary-gold) rgba(0,0,0,0.1);
+            }
+
+            /* Custom scrollbar for webkit browsers */
+            .navbar-collapse::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            .navbar-collapse::-webkit-scrollbar-track {
+                background: rgba(0,0,0,0.05);
+                border-radius: 3px;
+            }
+
+            .navbar-collapse::-webkit-scrollbar-thumb {
+                background: var(--primary-gold);
+                border-radius: 3px;
+            }
+
+            .navbar-collapse::-webkit-scrollbar-thumb:hover {
+                background: #c9a227;
             }
             
             .navbar-nav {
